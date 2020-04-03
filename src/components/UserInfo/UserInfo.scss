@@ -1,0 +1,13 @@
+.user{
+
+  &_avatar img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+  }
+
+  &_info{
+    color: #8c8c8c;
+    padding-left: 10px;
+  }
+}
