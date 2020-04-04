@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../../assets/images/logo.png';
-import userAvatar from '../../assets/images/user-avatar.png';
 import './Header.scss'
 import {UserInfo} from "../UserInfo/UserInfo";
 
@@ -14,8 +13,8 @@ export const Header = (props) => {
                     <div className={`${CN}_logo col-2 d-flex align-items-center`}>
                         <img className={`${CN}_logo_img`} src={logo} alt="pinball"/>
                         <div className={`pl-2`}>
-                            <h3 className={`${CN}_logo_title`}>Pinball</h3>
-                            <span className={`${CN}_logo_description`}>The grid theme</span>
+                            <h3 className={`${CN}_logo_title`}>Movies</h3>
+                            <span className={`${CN}_logo_description`}>Best collection</span>
                         </div>
                     </div>
                     <div className={`d-flex justify-content-center align-items-center col-2`}>
