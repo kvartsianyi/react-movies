@@ -1,7 +1,5 @@
-import React, {useEffect} from 'react';
-import {bindActionCreators} from 'redux';
+import React from 'react';
 import {connect} from 'react-redux';
-import {getMovies, getGenres} from "../../actions";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 
 import './MoviesList.scss';
@@ -9,12 +7,6 @@ import './MoviesList.scss';
 const CN = 'movies-list';
 
 const MoviesList = (props) => {
-
-    useEffect(() => {
-        props.getMovies();
-        props.getGenres();
-    }, []);
-
     const {movies, genres} = props;
 
     return (
@@ -42,11 +34,5 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({
-        getMovies,
-        getGenres
-    }, dispatch);
-};
 
-export const MoviesListWithRedux = connect(mapStateToProps, mapDispatchToProps)(MoviesList);
+export const MoviesListWithRedux = connect(mapStateToProps)(MoviesList);

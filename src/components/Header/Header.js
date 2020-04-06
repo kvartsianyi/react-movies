@@ -1,16 +1,23 @@
 import React from 'react';
+import {UserInfo} from "../UserInfo/UserInfo";
+import { useHistory } from "react-router-dom";
 import logo from '../../assets/images/logo.png';
 import './Header.scss'
-import {UserInfo} from "../UserInfo/UserInfo";
 
 const CN = 'header';
 
 export const Header = (props) => {
+    const history = useHistory();
+
+    const goHome = () => {
+        history.push('/');
+    };
+
     return (
         <div className={CN}>
             <div className={`container`}>
                 <div className="row">
-                    <div className={`${CN}_logo col-2 d-flex align-items-center`}>
+                    <div className={`${CN}_logo col-2 d-flex align-items-center`} onClick={goHome}>
                         <img className={`${CN}_logo_img`} src={logo} alt="pinball"/>
                         <div className={`pl-2`}>
                             <h3 className={`${CN}_logo_title`}>Movies</h3>
