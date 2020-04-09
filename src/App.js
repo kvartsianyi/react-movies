@@ -3,6 +3,7 @@ import {Switch,Route} from 'react-router-dom';
 import './App.css';
 import {Header} from "./components/Header/Header";
 import {MoviesPageWithRedux} from "./containers/MoviesPage/MoviesPage";
+import {MovieDetailsPageWithRedux} from "./containers/MovieDetailsPage/MovieDetailsPage";
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
         <Switch>
             <Route exact path={`/`}>
                 <MoviesPageWithRedux/>
+            </Route>
+            <Route exact path={`/:movieId`}>
+                <MovieDetailsPageWithRedux/>
             </Route>
         </Switch>
     </>

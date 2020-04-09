@@ -3,17 +3,24 @@ import './MoviesListCard.scss';
 import {PosterPreview} from "../PosterPreview/PosterPreview";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
 import StarRatings from "react-star-ratings";
+import { useHistory } from "react-router-dom";
 
 const CN = 'movie-card';
 
 export const MoviesListCard = (props) => {
 
+    const history = useHistory();
+
     const {genres} = props;
-    const {title, overview, release_date, vote_average,poster_path: posterPath} = props.movie;
+    const {id ,title, overview, release_date, vote_average,poster_path: posterPath} = props.movie;
     const year = release_date.split('-')[0];
 
+    const getMovieInfo = (movieId) => {
+            history.push(`/${movieId}`);
+    };
+
     return (
-        <div className={CN}>
+        <div className={CN} onClick={() => getMovieInfo(id)}>
             <div className={`${CN}_poster`}>
                 <PosterPreview path={`https://image.tmdb.org/t/p/w500/${posterPath}`} alt={title}/>
                 <div className={`${CN}_poster_selected`}>Show details</div>

@@ -6,11 +6,11 @@ const CN = 'genre-badge';
 
 export const GenreBadge = (props) => {
 
-    const {name} = props;
+    const {name, onClick = () => {}} = props;
 
     return (
         <div className={CN}>
-            <Badge href={`#`} className={`m-1`} color={`light`}>{name}</Badge>
+            <Badge className={`m-1`} color={`light`} onClick={onClick}>{name}</Badge>
         </div>
     );
 };

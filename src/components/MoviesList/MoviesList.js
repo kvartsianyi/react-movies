@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 
+
 import './MoviesList.scss';
 
 const CN = 'movies-list';
