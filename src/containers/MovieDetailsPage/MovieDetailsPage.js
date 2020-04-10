@@ -17,16 +17,14 @@ export const MovieDetailsPage = (props) => {
         props.getMovie(movieId);
     }, []);
 
-    const {isLoadingMovie, movie} = props;
-
-    console.log(movie);
+    const {isLoadingMovie, movie, theme} = props;
 
     return (
         <div className={`${CN} container d-flex py-3`}>
             {
                 isLoadingMovie ?
                     <div className={`${CN}_loader`}><Loader /></div>:
-                    <MovieDetails movie={movie}/>
+                    <MovieDetails movie={movie} theme={theme}/>
 
             }
 
@@ -37,6 +35,7 @@ export const MovieDetailsPage = (props) => {
 
 const mapStateToProps = (state) => {
     return {
+        theme: state.theme,
         movie: state.singleMovie,
         isLoadingMovie: state.isLoadingMovie
     }

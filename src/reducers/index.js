@@ -4,8 +4,9 @@ import {
     IS_LOADING_MOVIES,
     CHANGE_PAGE,
     GET_MOVIES_WITH_GENRE,
-    IS_LOADING_MOVIE, GET_MOVIE
+    IS_LOADING_MOVIE, GET_MOVIE, CHANGE_THEME
 } from "../action-types";
+import {THEME_DARK, THEME_LIGHT} from "../constants";
 
 const initialState = {
     page: 1,
@@ -15,7 +16,8 @@ const initialState = {
     moviesList: [],
     isLoadingMovies: false,
     isLoadingMovie: false,
-    genresList: []
+    genresList: [],
+    theme: THEME_LIGHT
 };
 
 
@@ -48,6 +50,13 @@ export const rootReducer = (state = initialState, action) => {
             return {...state, isLoadingMovies: action.payload};
         case IS_LOADING_MOVIE:
             return {...state, isLoadingMovie: action.payload};
+        case CHANGE_THEME:
+            return {
+                ...state,
+                theme: state.theme === THEME_LIGHT ?
+                    THEME_DARK :
+                    THEME_LIGHT
+            };
         default:
             return state;
     }

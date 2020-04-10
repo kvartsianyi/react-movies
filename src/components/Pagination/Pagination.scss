@@ -16,16 +16,19 @@
     text-decoration: none;
     color: #1d1d1d;
     background-color: #ffffff;
-    transition: background-color .5s;
+    border: 2px solid #ffffff;
+    transition: background-color .5s, border .5s;
 
     &:hover {
       color: #ffffff;
       background-color: #1d1d1d;
+      border: 2px solid #ffffff;
     }
   }
 
   & .active {
     color: #ffffff;
     background-color: #1d1d1d;
+    border: 2px solid #ffffff;
   }
 }

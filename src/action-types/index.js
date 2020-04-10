@@ -11,3 +11,5 @@ export const IS_LOADING_MOVIE = 'IS_LOADING_MOVIE';
 export const GET_GENRES = 'GET_GENRES';
 
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+
+export const CHANGE_THEME = 'CHANGE_THEME';

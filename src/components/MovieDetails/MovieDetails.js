@@ -4,6 +4,7 @@ import {PosterPreview} from "../PosterPreview/PosterPreview";
 import './MovieDetails.scss';
 import StarRatings from "react-star-ratings";
 import {GenreBadge} from "../GenreBadge/GenreBadge";
+import {THEME_DARK} from "../../constants";
 
 const CN = 'movie';
 
@@ -13,9 +14,10 @@ export const MovieDetails = (props) => {
         return (<div>No movie</div>);
     }
 
-    console.log(props.movie);
+    const {theme} = props;
 
-    const {title,
+    const {
+        title,
         poster_path: posterPath,
         overview, vote_average,
         genres,
@@ -30,11 +32,11 @@ export const MovieDetails = (props) => {
 
     return (
         <div className={`d-flex flex-wrap`}>
-            <div className="col-xl-3 col-lg-4 col-12">
+            <div className={`col-xl-3 col-lg-4 col-12`}>
                 <div className={`${CN}_poster`}>
                     <PosterPreview path={`https://image.tmdb.org/t/p/w500/${posterPath}`} alt={title}/>
                 </div>
-                <div className={`${CN}_rating`}>
+                <div className={`${CN}_rating ${theme === THEME_DARK ? `bg-dark text-light` : ''}`}>
                     <span>Rating:</span>
                     <StarRatings
                         rating={vote_average/2}
@@ -47,7 +49,7 @@ export const MovieDetails = (props) => {
                 </div>
             </div>
             <div className={`col-xl-9 col-lg-8 col-12`}>
-                <div className={`${CN}_info p-md-5 p-3 mt-lg-0 mt-3`}>
+                <div className={`${CN}_info ${theme === THEME_DARK ? `bg-dark text-light` : ''} p-md-5 p-3 mt-lg-0 mt-3`}>
                     <h2 className={`title mb-4`}>{title}</h2>
                     <div className={`my-4`}>{overview}</div>
                     <div className={`label my-3`}><span>Companies:</span>
