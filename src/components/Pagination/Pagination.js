@@ -6,7 +6,13 @@ const CN = 'pagination';
 
 export const Pagination = (props) => {
     const {page: currPage, totalPages, changePage} = props;
-    const pagesRange = 4;
+    let pagesRange = 4;
+
+    console.log(window.innerWidth);
+
+    if(window.innerWidth <= 768){
+        pagesRange = 2;
+    }
 
     const pagesArray = [];
     const startPagination = currPage - pagesRange > 0 ? currPage - pagesRange : 1;

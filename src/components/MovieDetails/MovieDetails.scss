@@ -1,4 +1,9 @@
 .movie{
+  &_poster{
+    max-height: 500px;
+    overflow: hidden;
+  }
+
   &_rating{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -18,7 +23,7 @@
     border-radius: 5px;
 
     & .title{
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       text-align: center;
       font-weight: bold;
     }

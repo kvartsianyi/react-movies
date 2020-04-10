@@ -18,7 +18,7 @@ const MoviesList = (props) => {
                 const movieGenres = genres.filter((genre) => genre_ids.includes(genre.id));
 
                     return (
-                    <div key={movie.id} className={`col-3 py-2 px-1 ${CN}_card`}>
+                    <div key={movie.id} className={`col-xl-3 col-lg-4 col-md-6 col-12 py-2 px-1 ${CN}_card`}>
                         <MoviesListCard movie={movie} genres={movieGenres}/>
                     </div>
                 );
